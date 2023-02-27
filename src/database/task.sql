@@ -25,18 +25,16 @@ CREATE TABLE task (
   title VARCHAR(45) NOT NULL,
   description VARCHAR(255) NOT NULL,
   status INT NOT NULL,
-  deadline DATE DEFAULT NULL,
+  deadline DATE DEFAULT NULL, 
   comments VARCHAR(255) DEFAULT NULL,
-  responsible INT NOT NULL,
-  create_by INT NOT NULL,
-,
-  tag INT NOT NULL,
-,
+  responsible int not null,
+  create_by int not null,
+  tag int not null,
   PRIMARY KEY(id),
   foreign key(create_by) references user(id),
   foreign key(tag) references tag(id),
   foreign key(status) references status(id),
-  foreign key(responsible) references user(id)
+   foreign key(responsible) references user(id)
 );
 
 insert into
